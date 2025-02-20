@@ -1,22 +1,134 @@
 [
-    {
-        "title": "Stopping by Woods on a Snowy Evening",
-        "author": "Robert Frost",
-        "poem": "The woods are lovely, dark and deep.\nBut I have promises to keep,\nAnd miles to go before I sleep."
-    },
-    {
-        "title": "Hamlet",
-        "author": "William Shakespeare",
-        "poem": "To be or not to be, that is the question."
-    },
-    {
-        "title": "I Wandered Lonely as a Cloud",
-        "author": "William Wordsworth",
-        "poem": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills."
-    },
-    {
-        "title": "Do Not Go Gentle into That Good Night",
-        "author": "Dylan Thomas",
-        "poem": "Do not go gentle into that good night.\nRage, rage against the dying of the light."
-    }
+  {
+    "name": "The Road Not Taken",
+    "author": "Robert Frost",
+    "date": "1916",
+    "content": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both..."
+  },
+  {
+    "name": "Still I Rise",
+    "author": "Maya Angelou",
+    "date": "1978",
+    "content": "You may write me down in history\nWith your bitter, twisted lies..."
+  },
+  {
+    "name": "Ozymandias",
+    "author": "Percy Bysshe Shelley",
+    "date": "1818",
+    "content": "I met a traveler from an antique land\nWho said: Two vast and trunkless legs of stone..."
+  },
+  {
+    "name": "If—",
+    "author": "Rudyard Kipling",
+    "date": "1910",
+    "content": "If you can keep your head when all about you\nAre losing theirs and blaming it on you..."
+  },
+  {
+    "name": "Do Not Go Gentle into That Good Night",
+    "author": "Dylan Thomas",
+    "date": "1951",
+    "content": "Do not go gentle into that good night,\nOld age should burn and rave at close of day..."
+  },
+  {
+    "name": "The Waste Land",
+    "author": "T.S. Eliot",
+    "date": "1922",
+    "content": "April is the cruellest month, breeding\nLilacs out of the dead land..."
+  },
+  {
+    "name": "Annabel Lee",
+    "author": "Edgar Allan Poe",
+    "date": "1849",
+    "content": "It was many and many a year ago,\nIn a kingdom by the sea..."
+  },
+  {
+    "name": "Sonnet 18",
+    "author": "William Shakespeare",
+    "date": "1609",
+    "content": "Shall I compare thee to a summer's day?\nThou art more lovely and more temperate..."
+  },
+  {
+    "name": "Invictus",
+    "author": "William Ernest Henley",
+    "date": "1888",
+    "content": "Out of the night that covers me,\nBlack as the pit from pole to pole..."
+  },
+  {
+    "name": "A Dream Within A Dream",
+    "author": "Edgar Allan Poe",
+    "date": "1849",
+    "content": "Take this kiss upon the brow!\nAnd, in parting from you now..."
+  },
+  {
+    "name": "The Tyger",
+    "author": "William Blake",
+    "date": "1794",
+    "content": "Tyger Tyger, burning bright,\nIn the forests of the night..."
+  },
+  {
+    "name": "Because I Could Not Stop for Death",
+    "author": "Emily Dickinson",
+    "date": "1890",
+    "content": "Because I could not stop for Death –\nHe kindly stopped for me..."
+  },
+  {
+    "name": "How Do I Love Thee?",
+    "author": "Elizabeth Barrett Browning",
+    "date": "1850",
+    "content": "How do I love thee? Let me count the ways.\nI love thee to the depth and breadth and height..."
+  },
+  {
+    "name": "The Love Song of J. Alfred Prufrock",
+    "author": "T.S. Eliot",
+    "date": "1915",
+    "content": "Let us go then, you and I,\nWhen the evening is spread out against the sky..."
+  },
+  {
+    "name": "The Raven",
+    "author": "Edgar Allan Poe",
+    "date": "1845",
+    "content": "Once upon a midnight dreary, while I pondered, weak and weary..."
+  },
+  {
+    "name": "The New Colossus",
+    "author": "Emma Lazarus",
+    "date": "1883",
+    "content": "Give me your tired, your poor,\nYour huddled masses yearning to breathe free..."
+  },
+  {
+    "name": "The Second Coming",
+    "author": "W.B. Yeats",
+    "date": "1919",
+    "content": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer..."
+  },
+  {
+    "name": "The Rime of the Ancient Mariner",
+    "author": "Samuel Taylor Coleridge",
+    "date": "1798",
+    "content": "It is an ancient Mariner,\nAnd he stoppeth one of three..."
+  },
+  {
+    "name": "The Charge of the Light Brigade",
+    "author": "Alfred, Lord Tennyson",
+    "date": "1854",
+    "content": "Half a league, half a league,\nHalf a league onward..."
+  },
+  {
+    "name": "She Walks in Beauty",
+    "author": "Lord Byron",
+    "date": "1814",
+    "content": "She walks in beauty, like the night\nOf cloudless climes and starry skies..."
+  },
+  {
+    "name": "To Autumn",
+    "author": "John Keats",
+    "date": "1820",
+    "content": "Season of mists and mellow fruitfulness,\nClose bosom-friend of the maturing sun..."
+  },
+  {
+    "name": "Daffodils",
+    "author": "William Wordsworth",
+    "date": "1807",
+    "content": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills..."
+  }
 ]
