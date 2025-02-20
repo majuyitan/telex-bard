@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Stopping by Woods on a Snowy Evening",
+        "author": "Robert Frost",
+        "poem": "The woods are lovely, dark and deep.\nBut I have promises to keep,\nAnd miles to go before I sleep."
+    },
+    {
+        "title": "Hamlet",
+        "author": "William Shakespeare",
+        "poem": "To be or not to be, that is the question."
+    },
+    {
+        "title": "I Wandered Lonely as a Cloud",
+        "author": "William Wordsworth",
+        "poem": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills."
+    },
+    {
+        "title": "Do Not Go Gentle into That Good Night",
+        "author": "Dylan Thomas",
+        "poem": "Do not go gentle into that good night.\nRage, rage against the dying of the light."
+    }
+]
