@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
         type: 'interval',
         description: 'Delivers a poem at a specific time every day',
         interval: '0 8 * * *',
-        action: 'https://asdfasdfasdf.com/send-poem'
+        action: 'https://telex-bard.onrender.com/send-poem'
     });
 });
 
