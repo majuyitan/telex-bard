@@ -1,1 +1,1 @@
-# telex-bard
+# Telex Bard
