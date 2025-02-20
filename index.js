@@ -43,9 +43,11 @@ app.get('/integration', (req, res) => {
 			"is_active": true,
 			"integration_type": "interval",
 			"key_features": [
-				"\"Poem of the day\""
+				"\"Prints out a poem every day at 8 AM.\""
 			],
 			"author": "Majuyi",
+			"integration_category": "Communication & Collaboration",
+			"website": "https://telex-bard.onrender.com",
 			"settings": [
 				{
 					"label": "Time Interval",
@@ -56,6 +58,7 @@ app.get('/integration', (req, res) => {
 			],
 			"target_url": "https://telex-bard.onrender.com/",
 			"tick_url": "https://telex-bard.onrender.com/tick"
+		}
 		}
 	});
 });
