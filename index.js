@@ -59,7 +59,6 @@ app.get('/integration', (req, res) => {
 			"target_url": "https://telex-bard.onrender.com/",
 			"tick_url": "https://telex-bard.onrender.com/tick"
 		}
-		}
 	});
 });
 
