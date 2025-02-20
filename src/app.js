@@ -17,7 +17,7 @@ app.use('/api', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
 
 // Cron job for local testing
-cron.schedule('* * * * *', () => {
+cron.schedule('0 8 * * *', () => {
     console.log('Testing scheduled poem delivery...');
     console.log(getRandomPoem());
 });
