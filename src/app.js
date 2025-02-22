@@ -20,11 +20,12 @@ app.use('/api', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
 app.use('/webhook', require('./routes/webhook'));
 
+// Cron-job for Local testing
 // Define the tick endpoint URL (use your actual endpoint)
 const TICK_ENDPOINT = `http://${process.env.TELEX_WEBHOOK_URL}/tick`;
 
-// Schedule the tick endpoint to run every minute
-cron.schedule('0 8 * * *', async () => {
+// Schedule the tick endpoint to run every 6 AM for test as opposed to the 8 AM for feature
+cron.schedule('0 6 * * *', async () => {
     try {
         console.log('Running scheduled task: Calling /tick endpoint');
         const response = await axios.post(TICK_ENDPOINT);
