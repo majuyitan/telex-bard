@@ -35,18 +35,12 @@ cd telex-bard
 npm install
 ```
 
-### 3. **Environment Variables:**
-Create a `.env` file in the root directory and add:
-```plaintext
-TELEX_BEARER_TOKEN=your_telex_bearer_token_here
-```
-
-### 4. **Run the Server:**
+### 3. **Run the Server:**
 ```sh
 npm start
 ```
 
-### 5. **Test the Endpoint:**
+### 4. **Test the Endpoint:**
 Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 
 ---
