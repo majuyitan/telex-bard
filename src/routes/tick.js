@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 		// Prepare the payload for Telex
 		const payload = {
 			event_name: 'Poem of the Day',
-			message: `📖 "${poem.name}"\nby ${poem.author} (${poem.date})\n\n${poem.content}`,
+			message: `📖 ${poem.name}\nby ${poem.author} (${poem.date})\n\n${poem.content}`,
 			status: 'success',
 			username: 'Telex Bard',
 		};
