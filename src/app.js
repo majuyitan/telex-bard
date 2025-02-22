@@ -4,6 +4,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const axios = require('axios'); // For making HTTP requests
 const cron = require('node-cron');
 const { getRandomPoem } = require('./utils/getRandomPoem');
 
@@ -23,7 +24,7 @@ app.use('/webhook', require('./routes/webhook'));
 const TICK_ENDPOINT = `http://${process.env.TELEX_WEBHOOK_URL}/tick`;
 
 // Schedule the tick endpoint to run every minute
-cron.schedule('* * * * *', async () => {
+cron.schedule('0 8 * * *', async () => {
     try {
         console.log('Running scheduled task: Calling /tick endpoint');
         const response = await axios.post(TICK_ENDPOINT);
