@@ -3,26 +3,45 @@
 const express = require('express');
 const router = express.Router();
 const { getRandomPoem } = require('../utils/getRandomPoem');
+const { postToTelex } = require('../utils/telexPoster');
+const { scheduleJob, stopJob } = require('../utils/jobManager');
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const poem = getRandomPoem();
-        
-        if (!poem) {
-            return res.status(404).json({ error: 'No poem found' });
+        console.log('Received tick request:', JSON.stringify(req.body, null, 2));
+        let { return_url, settings } = req.body;
+
+        // Fallback to environment variable if return_url is not provided
+        return_url = return_url || process.env.TELEX_WEBHOOK_URL;
+        if (!return_url) {
+            return res.status(400).json({ error: 'Missing return_url' });
         }
 
-        console.log('Tick endpoint called. Sending poem:', poem.title);
+        const intervalSetting = settings.find(s => s.label === 'interval');
+        const interval = intervalSetting ? intervalSetting.default : '* * * * *';
+        console.log(`Schedule: ${interval}`);
 
-        res.json({
-            title: poem.title,
-            author: poem.author,
-            date: poem.date,
-            content: poem.content
+        // Stop any existing job for the return_url
+        stopJob(return_url);
+
+        // Schedule and store the new job
+        scheduleJob(interval, return_url, async () => {
+            console.log(`Running scheduled task for return_url: ${return_url}`);
+            const poem = getRandomPoem();
+
+            if (!poem) {
+                console.warn('No poem found to send');
+                return;
+            }
+
+            console.log('Sending poem:', poem.title);
+            await postToTelex(return_url, poem);
         });
+
+        res.json({ success: true, message: 'Tick received and scheduled' });
     } catch (error) {
-        console.error('Error in /tick route:', error);
-        res.status(500).json({ error: 'An error occurred while fetching the poem' });
+        console.error('Error in /tick route:', error.message);
+        res.status(500).json({ error: 'An error occurred while scheduling the task' });
     }
 });
 

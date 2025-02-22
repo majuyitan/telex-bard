@@ -27,10 +27,10 @@ router.get('/integration', (req, res) => {
             "website": "https://telex-bard.onrender.com",
             "settings": [
                 {
-                    "label": "Time Interval",
-                    "type": "number",
+                    "label": "interval",
+                    "type": "string",
                     "required": true,
-                    "default": "24"
+                    "default": "* * * * *"
                 }
             ],
             "target_url": "https://telex-bard.onrender.com/",

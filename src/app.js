@@ -15,6 +15,7 @@ app.use(express.static('public'));
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
+app.use('/webhook', require('./routes/webhook'));
 
 // Cron job for local testing
 cron.schedule('0 8 * * *', () => {
