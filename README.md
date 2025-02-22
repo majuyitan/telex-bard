@@ -61,16 +61,26 @@ Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 
 ## **Project Structure**
 ```
+├── public
+│   └── quill.png
 ├── src
+│   ├── app.js
+│   ├── poems.json
 │   ├── routes
+│   │   ├── index.js
+│   │   ├── integration.js
 │   │   └── tick.js        # Endpoint to trigger poem sending
-│   ├── utils
-│   │   └── getRandomPoem.js # Poem selection logic
-│   ├── assets
-│   │   └── quill.png      # Telex Integration Icon
+│   └── utils
+│       └── getRandomPoem.js # Poem selection logic
 ├── .env                   # Environment variables
 ├── package.json           # Project metadata & dependencies
+├── package-lock.json
+├── server.js              # Server entry point
 └── README.md              # Project documentation
+```
+
+```
+└── src
 ```
 
 ---
