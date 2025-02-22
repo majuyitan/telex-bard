@@ -18,15 +18,13 @@ router.post('/', async (req, res) => {
 
         console.log('Tick endpoint called. Sending poem:', poem.title);
 
-        // Prepare the payload for Telex
-        const payload = {
-            event_name: 'Poem of the Day',
-            message: `${poem.title} by ${poem.author}`,
-            status: 'success',
-            username: 'Collins',
-            content: poem.content,
-            date: poem.date
-        };
+		// Prepare the payload for Telex
+		const payload = {
+			event_name: 'Telex Bard: Poem of the Day',
+			message: `📖 Poem of the Day\n\n"${poem.name}"\nby ${poem.author} (${poem.date})\n\n${poem.content}`,
+			status: 'success',
+			username: 'Majuyi',
+		};
 
         // Send the poem to Telex via webhook
         const response = await axios.post(TELEX_WEBHOOK_URL, payload);
