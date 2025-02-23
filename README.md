@@ -1,4 +1,4 @@
-# Telex Bard Integration
+# Telex Bard
 
 ## **Project Overview**
 Telex Bard is an Interval Integration for Telex that delivers a 'Poem of the Day' from a predefined collection at a specific time every day. This integration is developed using **Node.js** and integrates seamlessly with the **Telex API** to post messages automatically.
