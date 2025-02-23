@@ -66,7 +66,7 @@ Step-by-Step Integration Guide:
 - Go to Telex and create a new channel.
 - Note the Webhook URL provided by Telex.
 
-### 2. **Configure Your Integration:*
+### 2. **Configure Your Integration:**
 - In your integration.js file, add the Webhook URL to ensure your integration is connected correctly.
 - Example configuration:
 ```json
@@ -99,7 +99,7 @@ npm start
 curl -X POST http://localhost:3000/tick
 ```
 
-### 5. **Verify Telex Channel:*
+### 5. **Verify Telex Channel:**
 - Check your Telex Channel to see if the Poem of the Day is delivered as expected.
 
 ### **Updating Integration Settings:**
