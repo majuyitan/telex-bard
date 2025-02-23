@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "tree": "tree -I 'node_modules|coverage|dist'"
+    "tree": "tree -I 'node_modules|coverage|dist' --dirsfirst"
   },
   "keywords": [],
   "author": "",
