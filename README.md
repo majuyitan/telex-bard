@@ -38,6 +38,7 @@ npm install
 ### 3. **Environment Variables:**
 Create a `.env` file in the root directory and add:
 ```plaintext
+PORT=your_port
 TELEX_WEBHOOK_URL=your_telex_webhook_url_here
 ```
 
@@ -77,6 +78,37 @@ Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 ├── package-lock.json
 ├── server.js              # Server entry point
 └── README.md              # Project documentation
+```
+
+## **API Endpoints**
+
+### **Health Check**
+```http
+GET /health
+```
+- **Response:** `{ "status": "Healthy" }`
+
+### **Integration Info**
+```http
+GET /api/integration
+```
+- **Response:** Provides metadata for Telex integration.
+
+### **Tick Endpoint**
+```http
+POST /tick
+```
+- **Request Body:**
+```json
+{
+    "return_url": "https://your-webhook-url.com",
+    "settings": [
+        {
+            "label": "interval",
+            "default": "0 8 * * *"
+        }
+    ]
+}
 ```
 
 ---
