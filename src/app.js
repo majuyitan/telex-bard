@@ -5,17 +5,14 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios'); // For making HTTP requests
-const cron = require('node-cron');
-const { getRandomPoem } = require('./utils/getRandomPoem');
-
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Routes
-app.use(express.static('public'));
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
