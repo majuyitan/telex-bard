@@ -1,6 +1,0 @@
-name: Telex Bard JS CI/CD
-description: "This action will be configured later."
-inputs: {}
-runs:
-  using: "node22"
-  main: "server.js"
