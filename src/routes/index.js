@@ -9,8 +9,9 @@ router.get('/', (req, res) => {
         type: 'interval',
         description: 'Delivers a poem at a specific time every day',
         interval: '0 8 * * *',
-        action: 'https://telex-bard.onrender.com/send-poem',
-        integration: 'https://telex-bard.onrender.com/api/integration.json'
+        health: 'https://telex-bard.onrender.com/api/health',
+        integration: 'https://telex-bard.onrender.com/api/integration',
+        tick: 'https://telex-bard.onrender.com/tick'
     });
 });
 
