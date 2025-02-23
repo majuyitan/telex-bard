@@ -30,7 +30,7 @@ router.get('/integration', (req, res) => {
                     "label": "interval",
                     "type": "string",
                     "required": true,
-                    "default": "0 8 * * *"
+                    "default": "* * * * *"
                 }
             ],
             "target_url": "https://telex-bard.onrender.com/",
