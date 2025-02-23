@@ -69,10 +69,60 @@ npm test
 
 ## **Testing**
 
-- Simply push to the repository or open a pull request to trigger a unit test.
+To run the test suite for this project, follow these steps:
+
+### 1. Install Dependencies
+
+Ensure all required packages are installed:
+
+npm install
+
+### 2. Setup Environment Variables
+
+Create a .env.test file (or use .env) and add any necessary environment variables for testing. For example:
+
+TELEX_WEBHOOK_URL=https://example.com/webhook
+
+### 3. Run Tests
+
+To execute all tests:
+
+npm test
+
+Or, using **Jest**, you can also run:
+
+npx jest
+
+### 4. Running Specific Tests
+
+To run a single test file:
+
+npx jest path/to/testFile.test.js
+
+### 5. Skipping or Focusing Tests
+- Skip a test using .skip:
+
+it.skip('should do something', () => {
+    // test code
+});
+
+- Run only a specific test using .only:
+
+it.only('should do something', () => {
+    // test code
+});
+
+6. Test Coverage
+
+To generate a test coverage report:
+
+npx jest --coverage
+
+The coverage report will be available in the coverage/ directory.
+
+Let me know if this aligns with your setup or if you’d like me to include any additional testing tips or commands! 😊
 
 ![Telex Bard on telex-bard channel](image.png)
-![Telex Bard on github-telex-integration channel](image1.png)
 Get logged in to the `telex-bard` or `github-telex-integration` channels on Telex test organization to view the activity of Telex Bard live in real-time
 
 ---
