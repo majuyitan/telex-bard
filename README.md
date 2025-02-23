@@ -38,9 +38,11 @@ npm install
 ### 3. **Environment Variables:**
 Create a `.env` file in the root directory and add:
 ```plaintext
-PORT=your_port
-TELEX_WEBHOOK_URL=your_telex_webhook_url_here
+PORT=PORT
+TELEX_WEBHOOK_URL=https://ping.telex.im/v1/webhooks/YOUR-WEBHOOK-ID
 ```
+
+Replace `YOUR-WEBHOOK-ID` with your actual Telex webhook ID.
 
 ### 4. **Run the Server:**
 ```sh
@@ -50,6 +52,11 @@ npm start
 ### 5. **Test the Endpoint:**
 Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 
+### 6. **Run Tests:**
+```sh
+npm test
+```
+
 ---
 
 ## **How It Works**
@@ -57,6 +64,16 @@ Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 - It fetches a random poem using the `getRandomPoem()` utility.
 - Sends the poem to the Telex channel using the **Telex Messages API**.
 - Scheduled to run automatically at **8 AM daily**.
+
+---
+
+## **Testing**
+
+- Simply push to the repository or open a pull request to trigger a unit test.
+
+![Telex Bard on telex-bard channel](image.png)
+![Telex Bard on github-telex-integration channel](image1.png)
+Get logged in to the `telex-bard` or `github-telex-integration` channels on Telex test organization to view the activity of Telex Bard live in real-time
 
 ---
 
@@ -120,5 +137,38 @@ POST /tick
 
 ---
 
-## **License**
-This project is licensed under the **MIT License**.
+## Contributing
+
+1. **Fork the repository**.
+
+2. **Create a feature branch**:
+
+```bash
+git checkout -b feature/YourFeatureName
+```
+
+3. **Commit your changes**:
+
+```bash
+git commit -m 'Add YourFeatureName'
+```
+
+4. **Push to the branch**:
+
+```bash
+git push origin feature/YourFeatureName
+```
+
+5. **Open a Pull Request**.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Support
+
+For support, please open an issue in the GitHub repository.
