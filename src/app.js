@@ -21,4 +21,7 @@ app.use('/api', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
 app.use('/webhook', require('./routes/webhook'));
 
+const healthRouter = require('./routes/health');
+app.use('/health', healthRouter);
+
 module.exports = app;
