@@ -28,7 +28,7 @@ router.get('/integration', (req, res) => {
             "settings": [
                 {
                     "label": "interval",
-                    "type": "string",
+                    "type": "text",
                     "required": true,
                     "default": "* * * * *"
                 }
