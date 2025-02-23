@@ -130,7 +130,7 @@ it.only('should do something', () => {
 
 To generate a test coverage report:
 
-``sh
+```sh
 npx jest --coverage
 ```
 
