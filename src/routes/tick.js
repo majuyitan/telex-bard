@@ -18,6 +18,14 @@ router.post('/', async (req, res) => {
 
         console.log('Tick endpoint called. Sending poem:', poem.name);
 
+        // Log detailed request info
+        console.log('=============================');
+        console.log('Tick endpoint hit!');
+        console.log('Timestamp:', new Date().toISOString());
+        console.log('IP Address:', req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+        console.log('User-Agent:', req.headers['user-agent']);
+        console.log('=============================');
+
 		// Prepare the payload for Telex
 		const payload = {
 			event_name: 'Poem of the Day',

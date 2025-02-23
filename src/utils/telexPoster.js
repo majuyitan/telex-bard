@@ -5,7 +5,7 @@ const axios = require('axios');
 const postToTelex = async (url, poem) => {
     try {
         const payload = {
-            title: poem.title,
+            title: poem.name,
             author: poem.author,
             date: poem.date,
             content: poem.content
