@@ -59,9 +59,9 @@ npm test
 
 ---
 
-## Integrating Telex Bard with a Telex Channel
+## **Integrating Telex Bard with a Telex Channel**
 
-Step-by-Step Integration Guide:
+## Step-by-Step Integration Guide:
 ### 1. **Create a Telex Channel:**
 - Go to Telex and create a new channel.
 - Note the Webhook URL provided by Telex.
@@ -102,7 +102,7 @@ curl -X POST http://localhost:3000/tick
 ### 5. **Verify Telex Channel:**
 - Check your Telex Channel to see if the Poem of the Day is delivered as expected.
 
-### **Updating Integration Settings:**
+## Updating Integration Settings:
 - You can update the cron interval or return URL by editing the settings in the integration.js file.
 - After updating, restart your server:
 
@@ -110,7 +110,7 @@ curl -X POST http://localhost:3000/tick
 npm run start
 ```
 
-## **Troubleshooting:**
+## Troubleshooting:
 - No Poem Posted?
 - Check server logs:
 
@@ -120,7 +120,7 @@ npm run logs
 
 - Verify Webhook URL and network connectivity.
 
-## **Scheduling Issues?**
+## Scheduling Issues?
 - Test the /tick route directly to ensure it’s reachable:
 
 ```sh
