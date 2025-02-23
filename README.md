@@ -59,6 +59,76 @@ npm test
 
 ---
 
+## Integrating Telex Bard with a Telex Channel
+
+Step-by-Step Integration Guide:
+### 1. **Create a Telex Channel:**
+- Go to Telex and create a new channel.
+- Note the Webhook URL provided by Telex.
+
+### 2. **Configure Your Integration:*
+- In your integration.js file, add the Webhook URL to ensure your integration is connected correctly.
+- Example configuration:
+```json
+{
+    "return_url": "https://ping.telex.im/v1/webhooks/YOUR_WEBHOOK_ID",
+    "settings": [
+        {
+            "label": "interval",
+            "default": "0 8 * * *"
+        }
+    ]
+}
+```
+
+### 3. **Set Up Cron Interval:**
+- The interval setting uses cron syntax.
+- The example `"0 8 * * *"` triggers the integration daily at 8 AM.
+- Cron Expression Generator can help customize this.
+
+### 4. **Deploy & Test:**
+- Ensure your server is running:
+
+```sh
+npm start
+```
+
+- Trigger a tick event to verify the integration:
+
+```sh
+curl -X POST http://localhost:3000/tick
+```
+
+### 5. **Verify Telex Channel:*
+- Check your Telex Channel to see if the Poem of the Day is delivered as expected.
+
+### **Updating Integration Settings:**
+- You can update the cron interval or return URL by editing the settings in the integration.js file.
+- After updating, restart your server:
+
+```sh
+npm run start
+```
+
+## **Troubleshooting:**
+- No Poem Posted?
+- Check server logs:
+
+```sh
+npm run logs
+```
+
+- Verify Webhook URL and network connectivity.
+
+## **Scheduling Issues?**
+- Test the /tick route directly to ensure it’s reachable:
+
+```sh
+curl -X POST http://localhost:3000/tick
+```
+
+---
+
 ## **How It Works**
 - `tick.js` is the main route that triggers the poem delivery.
 - It fetches a random poem using the `getRandomPoem()` utility.
