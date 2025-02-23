@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
                 return;
             }
 
-            console.log('Sending poem:', poem.title);
+            console.log('Sending poem:', poem.name);
             await postToTelex(return_url, poem);
         });
 
