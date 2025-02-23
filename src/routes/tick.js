@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
             return res.status(404).json({ error: 'No poem found' });
         }
 
-        console.log('Tick endpoint called. Sending poem:', poem.title);
+        console.log('Tick endpoint called. Sending poem:', poem.name);
 
 		// Prepare the payload for Telex
 		const payload = {
