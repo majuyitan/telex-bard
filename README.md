@@ -146,19 +146,31 @@ Get logged in to the `telex-bard` or `github-telex-integration` channels on Tele
 ├── public
 │   └── quill.png
 ├── src
-│   ├── app.js
-│   ├── poems.json
-│   ├── routes
-│   │   ├── index.js
-│   │   ├── integration.js
-│   │   └── tick.js        # Endpoint to trigger poem sending
-│   └── utils
-│       └── getRandomPoem.js # Poem selection logic
-├── .env                   # Environment variables
-├── package.json           # Project metadata & dependencies
+│   ├── routes
+│   │   ├── health.js
+│   │   ├── index.js
+│   │   ├── integration.js
+│   │   ├── tick.js
+│   │   └── webhook.js
+│   ├── utils
+│   │   ├── getRandomPoem.js
+│   │   ├── jobManager.js
+│   │   └── telexPoster.js
+│   ├── app.js
+│   └── poems.json
+├── tests
+│   ├── routes
+│   │   ├── health.test.js
+│   │   └── integration.test.js
+│   ├── utils
+│   │   └── getRandomPoem.test.js
+│   ├── app.test.js
+│   └── jest.config.js
+├── README.md
+├── image.png
 ├── package-lock.json
-├── server.js              # Server entry point
-└── README.md              # Project documentation
+├── package.json
+└── server.js
 ```
 
 ## **API Endpoints**
