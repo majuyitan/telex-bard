@@ -8,7 +8,7 @@ Telex Bard is an Interval Integration for Telex that delivers a 'Poem of the Day
 ## **Key Features**
 - Automatically selects and posts a random poem to a Telex channel daily.
 - Uses the **Telex Messages API** to deliver the poems.
-- Configured to run at **6 PM every evening** using Interval cron scheduling.
+- Configured to run at **8 AM every evening** using Interval cron scheduling.
 - Implements **Bearer Token Authentication** for secure API access.
 
 ---
@@ -77,10 +77,6 @@ Use Postman or any API testing tool to **POST** to `http://localhost:3000/tick`.
 ├── package-lock.json
 ├── server.js              # Server entry point
 └── README.md              # Project documentation
-```
-
-```
-└── src
 ```
 
 ---
