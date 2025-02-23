@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/', require('./routes/index'));
-app.use('/api', require('./routes/integration'));
+app.use('/api/integration', require('./routes/integration'));
 app.use('/tick', require('./routes/tick'));
 app.use('/webhook', require('./routes/webhook'));
 app.use('/health', require('./routes/health'));

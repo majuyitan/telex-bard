@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/integration', (req, res) => {
+router.get('/', (req, res) => {
     res.json({
         "data": {
             "date": {
