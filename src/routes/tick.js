@@ -1,52 +1,47 @@
 // ./src/routes/tick.js
 
 const express = require('express');
-const axios = require('axios'); // For making HTTP requests
 const router = express.Router();
 const { getRandomPoem } = require('../utils/getRandomPoem');
-
-// Load the webhook URL from environment variables
-const TELEX_WEBHOOK_URL = process.env.TELEX_WEBHOOK_URL;
+const { postToTelex } = require('../utils/telexPoster');
+const { scheduleJob, stopJob } = require('../utils/jobManager');
 
 router.post('/', async (req, res) => {
     try {
-        const poem = getRandomPoem();
+        console.log('Received tick request:', JSON.stringify(req.body, null, 2));
+        let { return_url, settings } = req.body;
 
-        if (!poem) {
-            return res.status(404).json({ error: 'No poem found' });
+        // Fallback to environment variable if return_url is not provided
+        return_url = return_url || process.env.TELEX_WEBHOOK_URL;
+        if (!return_url) {
+            return res.status(400).json({ error: 'Missing return_url' });
         }
 
-        console.log('Tick endpoint called. Sending poem:', poem.name);
+        const intervalSetting = settings.find(s => s.label === 'interval');
+        const interval = intervalSetting ? intervalSetting.default : '0 8 * * *';
+        console.log(`Schedule: ${interval}`);
 
-        // Log detailed request info
-        console.log('=============================');
-        console.log('Tick endpoint hit!');
-        console.log('Timestamp:', new Date().toISOString());
-        console.log('IP Address:', req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress);
-        console.log('User-Agent:', req.headers['user-agent']);
-        console.log('=============================');
+        // Stop any existing job for the return_url
+        stopJob(return_url);
 
-		// Prepare the payload for Telex
-		const payload = {
-			event_name: 'Poem of the Day',
-			message: `📖 ${poem.name}\nby ${poem.author} (${poem.date})\n\n${poem.content}`,
-			status: 'success',
-			username: 'Telex Bard',
-		};
+        // Schedule and store the new job
+        scheduleJob(interval, return_url, async () => {
+            console.log(`Running scheduled task for return_url: ${return_url}`);
+            const poem = getRandomPoem();
 
-        // Send the poem to Telex via webhook
-        const response = await axios.post(TELEX_WEBHOOK_URL, payload);
-        console.log('Poem posted to Telex:', response.data);
+            if (!poem) {
+                console.warn('No poem found to send');
+                return;
+            }
 
-        res.json({
-            success: true,
-            message: 'Poem sent to Telex successfully',
-            poem: payload
+            console.log('Sending poem:', poem.title);
+            await postToTelex(return_url, poem);
         });
 
+        res.json({ success: true, message: 'Tick received and scheduled' });
     } catch (error) {
-        console.error('Error in /tick route:', error?.response?.data || error.message);
-        res.status(500).json({ error: 'An error occurred while sending the poem to Telex' });
+        console.error('Error in /tick route:', error.message);
+        res.status(500).json({ error: 'An error occurred while scheduling the task' });
     }
 });
 

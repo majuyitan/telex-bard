@@ -4,7 +4,7 @@ const poems = require('../poems.json');
 
 const getRandomPoem = () => {
     const poem = poems[Math.floor(Math.random() * poems.length)];
-    console.log('Selected poem:', poem); // Add this line
+    console.log('Selected poem:', poem);
     return poem;
 };
 
